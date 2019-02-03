@@ -1,0 +1,90 @@
+{
+  "name": "react-validatus-hook",
+  "version": "0.0.1",
+  "description": "A simple to use and light-weight React validator hook",
+  "main": "dist/useValidatus.js",
+  "homepage": "https://github.com/tsevdos/react-validatus-hook",
+  "engines": {
+    "node": ">=4"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config ./dev.config.js --mode development --hot --inline --port 3000",
+    "test": "jest",
+    "build": "webpack --mode production --config ./prod.config.js",
+    "prepublish": "rm -rf ./dist && npm run lint && npm test && npm run build",
+    "stats": "webpack --json > stats.json",
+    "lint": "eslint src/**/*.js examples/**/*.js",
+    "lint:fix": "npm run lint -- --fix",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
+    "preversion": "npm run prepublish",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "react",
+    "validator",
+    "validation",
+    "hook",
+    "validate",
+    "field-validation",
+    "form",
+    "forms",
+    "input"
+  ],
+  "author": "John Tsevdos <tsevdosjohn@gmail.com> (http://tsevdos.me)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsevdos/react-validatus-hook/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tsevdos/react-validatus-hook"
+  },
+  "peerDependencies": {
+    "react": ">= 16.8.0-alpha.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.2",
+    "@babel/plugin-proposal-class-properties": "7.2.1",
+    "@babel/plugin-proposal-object-rest-spread": "7.2.0",
+    "@babel/preset-env": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "10.0.1",
+    "babel-jest": "23.6.0",
+    "babel-loader": "8.0.4",
+    "eslint": "5.10.0",
+    "eslint-plugin-react": "7.11.1",
+    "jest": "23.6.0",
+    "react": "16.8.0-alpha.0",
+    "react-dom": "16.8.0-alpha.0",
+    "react-testing-library": "5.4.4",
+    "regenerator-runtime": "0.13.1",
+    "webpack": "4.27.1",
+    "webpack-cli": "3.1.2",
+    "webpack-dev-server": "3.1.10"
+  },
+  "dependencies": {
+    "validator": "10.9.0"
+  },
+  "jest": {
+    "verbose": true,
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ],
+    "modulePaths": [
+      "<rootDir>/src/"
+    ],
+    "testMatch": [
+      "<rootDir>/src/**/*.test.js"
+    ]
+  }
+}
